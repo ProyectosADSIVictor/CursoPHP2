@@ -87,9 +87,7 @@ foreach($insert as $data){
 	<td>".$data['edad']."</td>
 	<td><a href='eliminarusuario.php?usuario=".$data['usuario']."&contrasena=".$data['contrasena']."&nombre=".$data['nombre']."&apellido=".$data['apellido']."&edad=".$data['edad']."'>Eliminar</a></td>
 	
-	
 	<td><a href='formactualizarusuario.php?usuario=".$data['usuario']."&contrasena=".$data['contrasena']."&nombre=".$data['nombre']."&apellido=".$data['apellido']."&edad=".$data['edad']."'>Actualizar</a></td></tr>";
-
 }
 echo "
 <tr>
