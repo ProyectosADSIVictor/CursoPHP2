@@ -21,10 +21,12 @@ $conexion = new PDO('sqlite:favoritos.sqlite');
 
 
 
-$consulta = "SELECT * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$contrasena."' AND nombre='".$nombre."' AND apellido='".$apellido."' AND edad'".$edad."";
+$consulta = "SELECT * FROM usuarios WHERE usuario='".$usuario."' AND contrasena='".$contrasena."' AND nombre='".$nombre."' AND apellido='".$apellido."' AND edad = '".$edad."'";
+
 
 $update = $conexion->query($consulta);
 
+//
 echo '
 <table border=1 width=100%>
 <tr>
@@ -37,7 +39,7 @@ echo '
 </tr>';
 
 foreach($update as $fila)
-{	echo "
+{echo "
 <tr>
 <form action='actualizarusuario.php' method='POST'>
 <td><input type='text' name='usuario' value='".$fila['usuario']."'></td>
@@ -46,7 +48,7 @@ foreach($update as $fila)
 <td><input type='text' name='apellido' value= '".$fila['apellido']."'></td>
 <td><input type='text' name='edad' value= '".$fila['edad']."'></td>
 <td><input type='submit'></td>
-<td></td>
+
 </form>
 </tr>
 ";
@@ -54,6 +56,6 @@ foreach($update as $fila)
 
 echo "</table>";
 $_SESSION['usuario'] = $usuario;
-$conexion = NULL;
+//$conexion = NULL;
             
 ?>

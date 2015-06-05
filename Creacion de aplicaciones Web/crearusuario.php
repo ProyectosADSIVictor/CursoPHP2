@@ -2,7 +2,7 @@
 
 session_start();
 
-//$contador = 0;
+$contador = 0;
 $usuario = $_POST['usuario'];
 $contrasena = $_POST['contrasena'];
 $nombre = $_POST['nombre'];
@@ -11,22 +11,20 @@ $edad = $_POST['edad'];
 
 $conexion = new PDO('sqlite:favoritos.sqlite');
   
-$consulta = ("SELECT * FROM usuarios");
+$consulta = ("SELECT * FROM usuarios;");
 
-$resultado = $conexion->exec($consulta);
-/*
+$resultado = $conexion->query($consulta);
+
 foreach($resultado as $fila){
 if($fila['usuario'] == $usuario){
 	$contador++;
-	}else{
-		
-		}
+	}else{}
 	
-	}*/
-//$conexion = NULL;
+	}
+$conexion = NULL;
 
-//if($contador == 0){	
-//$conexion = new PDO('sqlite:favoritos.sqlite'); 
+if($contador == 0){	
+$conexion = new PDO('sqlite:favoritos.sqlite'); 
 /* consulta
 Los privilegios son:
 1= administrador
@@ -39,11 +37,11 @@ $insertar = $conexion->exec($insert);
 echo "
 <html>
 <head>
-<meta http-equiv='REFRESH' content='0; url= gestionusuarios.php'>
+<meta http-equiv='REFRESH' content='0; '>
 </head>
 </html>";
 	$conexion = NULL;
-	/*}else{	
+	}else{	
 	echo "Usuario ya Existente. Elige Otro";	
-		}*/
+		}
 ?>
